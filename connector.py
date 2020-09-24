@@ -3,12 +3,9 @@ import json
 import os
 from jikanpy import Jikan
 
-# user = os.environ.get('MAL_USER')
-user = 'bdavs'
-# apikey = os.environ.get('SONARR_API_KEY')
-apikey = '477689b8afe14fbaae587f00661d8c69'
-# sonarr_endpoint = os.environ.get('SONARR_ENDPOINT')
-sonarr_endpoint = 'https://sonarr.bdavs.com'
+user = os.environ.get('MAL_USER')
+apikey = os.environ.get('SONARR_APIKEY')
+sonarr_endpoint = os.environ.get('SONARR_ENDPOINT')
 
 if None in [user,apikey,sonarr_endpoint]:
     print("please include the required environment variables")
@@ -101,6 +98,7 @@ for mal_id in mal_ids:
     # resp = requests.get(sonarr_endpoint+'/api/series/1',params={'apikey':apikey})
     # json_payload = resp.text
     # print(json_payload)
+
     # post to add show
     resp = requests.post(sonarr_endpoint+'/api/series',params={'apikey':apikey}, json=json_payload)
     if resp.status_code != 200:
