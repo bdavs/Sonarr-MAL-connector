@@ -1,0 +1,1 @@
+curl -o animelist_mappings.json https://raw.githubusercontent.com/Fribb/anime-lists/master/animeMapping_full.json
