@@ -1,0 +1,11 @@
+version: "3.6"
+services:
+  sonar_mal:
+    image: sm
+    hostname: sm
+    container_name: sm
+    # restart: always
+    environment:
+      - MAL_USER=${MAL_USER}
+      - SONARR_APIKEY=${SONARR_APIKEY}
+      - SONARR_ENDPOINT=${SONARR_ENDPOINT}
